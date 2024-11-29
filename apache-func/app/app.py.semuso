@@ -1,0 +1,10 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Docker with Apache and Flask!"
+
+if __name__ == '__main__':
+    app.run(unix_socket='/tmp/gunicorn.sock')

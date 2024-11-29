@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  apache:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./index.html:/var/www/html/index.html
+    networks:
+      - app-network
+
+  # Exemplo de serviço Flask (ou qualquer outro serviço que você queira rodar)
+  flask:
+    image: python:3.9
+    working_dir: /app
+    volumes:
+      - ./flask-app:/app
+    command: python app.py
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
