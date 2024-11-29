@@ -1,5 +1,5 @@
 # Usar uma imagem base do Python com o Apache
-FROM python:3.9-slim
+FROM python
 
 # Instalar dependências necessárias
 RUN apt-get update && \
