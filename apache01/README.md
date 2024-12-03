@@ -6,3 +6,6 @@ docker run -p 8080:80 python-apache-flask
 
 Para ver:
 http://127.0.0.1:8080/
+
+Para instalar o pacote python:
+pip install --break-system-packages flup
