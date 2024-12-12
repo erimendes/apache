@@ -1,5 +1,5 @@
 # Usar a imagem oficial do Python
-FROM python:3.9-slim
+FROM python
 
 # Instalar dependências do sistema, incluindo Apache e módulos necessários
 RUN apt-get update && \
@@ -26,6 +26,9 @@ RUN a2enmod proxy && \
     a2enmod rewrite && \
     a2enmod proxy_fcgi && \
     a2enmod headers
+# Ativar os módulos do Apache
+RUN a2enmod proxy_balancer && \
+    a2enmod lbmethod_byrequests
 
 # Copiar a configuração do Apache para o container
 COPY ./sites-available/apache2.conf /etc/apache2/sites-available/000-default.conf
