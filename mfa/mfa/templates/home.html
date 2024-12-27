@@ -1,0 +1,10 @@
+<!-- home.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h2>Bem-vindo à Página Inicial!</h2>
+    <p>Esta é a página inicial do seu projeto Django.</p>
+    
+    <!-- Link para a página de cadastro -->
+    <a href="{% url 'account_signup' %}">Cadastre-se</a>
+{% endblock %}

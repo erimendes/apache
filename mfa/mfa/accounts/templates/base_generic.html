@@ -1,0 +1,35 @@
+<!-- templates/base_generic.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Projeto Django</title>
+    
+    <!-- Carregar tag static para referenciar arquivos estáticos -->
+    {% load static %}
+
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="{% url 'home' %}">Página Inicial</a>
+            <a href="{% url 'account_login' %}">Login</a>
+            <a href="{% url 'account_signup' %}">Cadastro</a>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>© 2024 Meu Projeto Django</p>
+    </footer>
+
+</body>
+</html>

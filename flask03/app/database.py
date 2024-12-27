@@ -20,8 +20,8 @@ def get_db_connection():
             user=db_config["user"],
             password=db_config["password"],
             database=db_config["database"],
-            charset=db_config["charset"],
-            collation=db_config["collation"]
+            # charset=db_config["charset"],
+            # collation=db_config["collation"]
         )
         if conn.is_connected():
             print("Conexão bem-sucedida ao banco de dados")
