@@ -1,4 +1,4 @@
-/* static/css/styles.css */
+/* Geral */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #583535;
     width: 100%;
     padding: 10px 0;
     position: fixed;
@@ -31,10 +31,21 @@ header {
     color: #f4f4f9;
 }
 
-.container {
-    max-width: 500px;
+footer {
+    background-color: #583535;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
     width: 100%;
-    margin-top: 80px;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Estilos para o container do login */
+.login-container {
+    max-width: 400px;  /* Limita a largura máxima do formulário */
+    width: 100%;       /* Ocupa a largura disponível do contêiner pai */
+    margin-top: 100px; /* Para distanciar do topo */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -46,11 +57,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-}
-
+/* Estilos para os campos do formulário */
 .form-group {
     margin-bottom: 15px;
 }
@@ -61,8 +68,13 @@ label {
     display: block;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="checkbox"] {
-    width: 100%;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="checkbox"] {
+    display: block;          /* Faz com que o campo ocupe toda a largura do seu contêiner */
+    width: 100%;             /* Garante que ele ocupe toda a largura disponível do contêiner */
+    max-width: 100%;         /* Ajusta para que o max-width de 300px seja efetivo */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -70,7 +82,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="che
 }
 
 button {
-    background-color: #333;
+    background-color: #583535;
     color: white;
     padding: 10px;
     border: none;
@@ -81,25 +93,15 @@ button {
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #583535;
 }
 
 a {
-    color: #333;
+    color: #583535;
     text-decoration: none;
     font-size: 14px;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
 }
