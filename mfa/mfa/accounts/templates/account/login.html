@@ -2,30 +2,28 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <div class="form-container">
-        <h2>Login</h2>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Username:</label>
-                {{ form.username }}
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                {{ form.password }}
-            </div>
-            <div class="form-group">
-                <label>
-                    {{ form.remember_me }} Lembrar-me
-                </label>
-            </div>
-            <div class="form-group">
-                <button type="submit">Entrar</button>
-            </div>
-        </form>
-
-        <p><a href="{% url 'password_reset' %}">Esqueceu sua senha?</a></p>
-
-        <p><a href="{% url 'home' %}">Voltar para a página inicial</a></p>
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="remember_me"> Lembrar-me
+            </label>
+        </div>
+        <button type="submit">Entrar</button>
+    </form>
+    <div class="links">
+        <a href="{% url 'password_reset' %}">Esqueceu sua senha?</a>
+        <a href="/">Voltar para a página inicial</a>
     </div>
+</div>
 {% endblock %}
